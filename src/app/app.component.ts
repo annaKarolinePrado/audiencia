@@ -16,12 +16,12 @@ export class AppComponent implements OnInit {
       title: 'Inicio',
       url: '/inicio',
       icon: 'home'
-    }/*,
-    {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
     },
+    {
+      title: 'Ato',
+      url: 'tipo-ato',
+      icon: 'archive'
+    }/*,
     {
       title: 'Favorites',
       url: '/folder/Favorites',

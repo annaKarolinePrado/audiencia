@@ -3,20 +3,12 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>bem-vindo</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
-    <ion-item>
-      <ion-label position="floating">Nome*</ion-label>
-      <ion-input  formControlName="nome" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.email.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.nome.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.nome.errors.minlength">Possui menos que 3 caracteres</p>
-      </div>
-    </ion-item>   
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">    
     <ion-item>
       <ion-label position="floating">E-mail*</ion-label>
       <ion-input  formControlName="email" type="text"></ion-input>
@@ -34,15 +26,7 @@
         <p style="color:brown" *ngIf="formGroup.controls.email.errors.minlength">Possui menos que 6 caracteres</p>
       </div>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Confirme a senha*</ion-label>
-      <ion-input formControlName="confirma" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.confirma.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.confirma.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.confirma.errors.minlength">Possui menos que 6 caracteres</p>
-      </div>
-    </ion-item>
-    
-    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
+    <button type="submit" expand="full" [disabled]="!formGroup.valid">Logar</button>
+    <button type="submit" expand="full" routerLink="/usuario-cadastro" >Cadastrar</button>
   </form>
 </ion-content>

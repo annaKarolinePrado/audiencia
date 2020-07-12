@@ -4,20 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BemVindoPageRoutingModule } from './bem-vindo-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { BemVindoPage } from './bem-vindo.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BemVindoPageRoutingModule,
+    LoginPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [
-    BemVindoPage
-  ]
+  declarations: [LoginPage]
 })
-export class BemVindoPageModule {}
+export class LoginPageModule {}

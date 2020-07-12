@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'bem-vindo',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -14,6 +14,18 @@ const routes: Routes = [
   {
     path: 'bem-vindo',
     loadChildren: () => import('./bem-vindo/bem-vindo.module').then( m => m.BemVindoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'usuario-cadastro',
+    loadChildren: () => import('./usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
+  },
+  {
+    path: 'tipo-ato',
+    loadChildren: () => import('./tipo-ato/tipo-ato.module').then( m => m.TipoAtoPageModule)
   }
 ];
 

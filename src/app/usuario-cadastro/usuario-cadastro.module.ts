@@ -4,20 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BemVindoPageRoutingModule } from './bem-vindo-routing.module';
+import { UsuarioCadastroPageRoutingModule } from './usuario-cadastro-routing.module';
 
-import { BemVindoPage } from './bem-vindo.page';
+import { UsuarioCadastroPage } from './usuario-cadastro.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BemVindoPageRoutingModule,
+    UsuarioCadastroPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [
-    BemVindoPage
-  ]
+  declarations: [UsuarioCadastroPage]
 })
-export class BemVindoPageModule {}
+export class UsuarioCadastroPageModule {}

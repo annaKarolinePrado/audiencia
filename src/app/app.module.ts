@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Autenticar } from './service/autenticar';
+import { Util } from './service/util';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     StatusBar,
     SplashScreen,
     FormsModule,
+    Autenticar,
+    Util,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Autenticar } from '../service/autenticar';
+
 @Component({
-  selector: 'app-bem-vindo',
-  templateUrl: './bem-vindo.page.html',
-  styleUrls: ['./bem-vindo.page.scss'],
+  selector: 'app-usuario-cadastro',
+  templateUrl: './usuario-cadastro.page.html',
+  styleUrls: ['./usuario-cadastro.page.scss'],
 })
-export class BemVindoPage implements OnInit {
+export class UsuarioCadastroPage implements OnInit {
   public formGroup: FormGroup;
   constructor(private formBuilder: FormBuilder, public autentica: Autenticar) {
     this.formGroup = this.formBuilder.group({

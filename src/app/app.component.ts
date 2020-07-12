@@ -20,7 +20,12 @@ export class AppComponent implements OnInit {
     {
       title: 'Ato',
       url: 'tipo-ato',
-      icon: 'archive'
+      icon: 'heart'
+    },
+    {
+      title: 'Natureza do Texto Juridico',
+      url: 'natureza-texto-juridico',
+      icon: 'heart'
     }/*,
     {
       title: 'Favorites',

@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'tipo-ato',
     loadChildren: () => import('./tipo-ato/tipo-ato.module').then( m => m.TipoAtoPageModule)
+  },
+  {
+    path: 'natureza-texto-juridico',
+    loadChildren: () => import('./natureza-texto-juridico/natureza-texto-juridico.module').then( m => m.NaturezaTextoJuridicoPageModule)
   }
 ];
 

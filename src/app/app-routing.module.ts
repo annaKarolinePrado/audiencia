@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'macroobjetivo',
     loadChildren: () => import('./macroobjetivo/macroobjetivo.module').then( m => m.MacroobjetivoPageModule)
+  },
+  {
+    path: 'tipo-responsavel',
+    loadChildren: () => import('./tipo-responsavel/tipo-responsavel.module').then( m => m.TipoResponsavelPageModule)
   }
 ];
 

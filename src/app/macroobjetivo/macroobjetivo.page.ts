@@ -27,11 +27,11 @@ export class MacroobjetivoPage implements OnInit {
   }
   salvar() {
     console.log(this.formGroup.value);
-    let ato= {
+    let macroobjetivo= {
       'denominacao':this.formGroup.get('denominacao').value,
       'descricao':this.formGroup.get('descricao').value
     }
-    console.log(ato); 
+    console.log(macroobjetivo); 
     //this.autentica.salvar(usuario);   
   }
   

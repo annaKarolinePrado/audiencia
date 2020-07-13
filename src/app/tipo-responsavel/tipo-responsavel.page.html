@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tipos de responsáveis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="floating">Descrição*</ion-label>
+      <ion-input  formControlName="descricao" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.descricao.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.descricao.errors.required">Campo obrigatório</p>
+      </div>
+    </ion-item>     
+    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
+    <button expand="full">Cancelar</button>
+  </form>
+</ion-content>

@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
       title: 'Fonte de divulgação',
       url: 'fonte-divulgacao',
       icon: 'heart'
+    },
+    {
+      title: 'Macro-objetivos',
+      url: 'macroobjetivo',
+      icon: 'heart'
     }/*,
     {
       title: 'Favorites',

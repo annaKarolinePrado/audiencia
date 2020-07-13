@@ -3,28 +3,25 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Tipo de ato</ion-title>
+    <ion-title>Macro-objetivos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
     <ion-item>
+      <ion-label position="floating">Denominação*</ion-label>
+      <ion-input  formControlName="denominacao" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.denominacao.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.denominacao.errors.required">Campo obrigatório</p>
+      </div>
+    </ion-item><ion-item>
       <ion-label position="floating">Descrição*</ion-label>
       <ion-input  formControlName="descricao" type="text"></ion-input>
       <div *ngIf="formGroup.controls.descricao.errors">
         <p style="color:brown" *ngIf="formGroup.controls.descricao.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.descricao.errors.minlength">Possui menos que 3 caracteres</p>
       </div>
-    </ion-item>   
-    <ion-item>
-      <ion-label position="floating">Classificação*</ion-label>
-      <ion-input  formControlName="classificacao" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.classificacao.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.classificacao.errors.required">Campo obrigatório</p>
-    </div>
-    </ion-item>       
-    
+    </ion-item>      
     <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
     <button expand="full">Cancelar</button>
   </form>

@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'fonte-divulgacao',
     loadChildren: () => import('./fonte-divulgacao/fonte-divulgacao.module').then( m => m.FonteDivulgacaoPageModule)
+  },
+  {
+    path: 'macroobjetivo',
+    loadChildren: () => import('./macroobjetivo/macroobjetivo.module').then( m => m.MacroobjetivoPageModule)
   }
 ];
 

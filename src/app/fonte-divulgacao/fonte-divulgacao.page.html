@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fonte de divulgação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="floating">Nome*</ion-label>
+      <ion-input  formControlName="nome" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.nome.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.nome.errors.required">Campo obrigatório</p>
+      </div>
+    </ion-item>     
+    <ion-item>
+      <ion-label stacked position="floating">Meio de divulgação*</ion-label>
+      <ion-select formControlName="fonteDivulgacao">
+        <ion-select-option value="1">Jornal com circulação nacional</ion-select-option>
+        <ion-select-option value="2">Jornal com circulação estadual</ion-select-option>
+        <ion-select-option value="3">Jornal com circulação regional</ion-select-option>
+        <ion-select-option value="4">Jornal com circulação municipal</ion-select-option>
+        <ion-select-option value="5">Diário oficial da união</ion-select-option>
+        <ion-select-option value="6">Diário oficial do estado</ion-select-option>
+        <ion-select-option value="7">Diário oficial do município</ion-select-option>
+        <ion-select-option value="8">Diário oficial eletrônico do tribunal de contas do estado</ion-select-option>
+        <ion-select-option value="9">Diário da justiça</ion-select-option>
+        <ion-select-option value="10">Diário da assembléia</ion-select-option>
+        <ion-select-option value="11">	Mural público</ion-select-option>
+        <ion-select-option value="12">Internet</ion-select-option>
+        <ion-select-option value="13">Editora</ion-select-option>
+      </ion-select>
+    </ion-item>    
+    
+    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
+    <button expand="full">Excluir</button>
+  </form>
+</ion-content>

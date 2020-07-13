@@ -23,8 +23,13 @@ export class AppComponent implements OnInit {
       icon: 'heart'
     },
     {
-      title: 'Natureza do Texto Juridico',
+      title: 'Natureza do Texto Jurídico',
       url: 'natureza-texto-juridico',
+      icon: 'heart'
+    },
+    {
+      title: 'Fonte de divulgação',
+      url: 'fonte-divulgacao',
       icon: 'heart'
     }/*,
     {

@@ -31,11 +31,7 @@ export class BemVindoPage implements OnInit {
     });
    }
 
-  ngOnInit() {
-    setTimeout(()=>{
-      this.formGroup.get('email').setValue('');
-    })
-    
+  ngOnInit() {    
   }
   salvar() {
     console.log(this.formGroup.value);

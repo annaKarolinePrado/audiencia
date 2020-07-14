@@ -12,6 +12,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ListagemTipoResponsavelPage implements OnInit {
   tiposResponsaveis: TipoResponsavel[]=[];
+  private routerService: Router;
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class ListagemTipoResponsavelPage implements OnInit {
         id: id
       }
     };
-    this.router.navigate(['/tipo-responsavel'], navigationExtras);
+    this.router.navigate(['/tipo-responsavel-edicao'], navigationExtras);
   }
   excluir(id) {    
     setTimeout(()=>{

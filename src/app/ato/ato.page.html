@@ -12,12 +12,20 @@
     <ion-item>
       <ion-label position="floating">Número*</ion-label>
       <ion-input  formControlName="numero" type="text"></ion-input>
-    </ion-item><ion-item>
+    </ion-item>
+    
+    <ion-item>
       <ion-label stacked position="floating">Atos*</ion-label>
       <ion-select formControlName="tipo">
         <ion-select-option *ngFor="let tipoAto of tipoAtos" [value]="tipoAto.id">{{tipoAto.descricao}}</ion-select-option>
       </ion-select>
-    </ion-item>  
+    </ion-item> 
+    
+    <ion-item>
+      <ion-label position="floating">Número*</ion-label>
+      <ion-input  formControlName="data" type="date"></ion-input>
+    </ion-item>
+
     <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
     <ion-button expand="full">Cancelar</ion-button>
   </form>

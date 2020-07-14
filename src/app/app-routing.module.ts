@@ -48,9 +48,14 @@ const routes: Routes = [
     loadChildren: () => import('./tipo-responsavel/listagem-tipo-responsavel/listagem-tipo-responsavel.module').then( m => m.ListagemTipoResponsavelPageModule)
   },
   {
+    path: 'tipo-responsavel-edicao',
+    loadChildren: () => import('./tipo-responsavel/tipo-edicao/tipo-edicao.module').then( m => m.TipoEdicaoPageModule)
+  },
+  {
     path: 'responsavel',
     loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
-  },  {
+  },
+  {
     path: 'ato',
     loadChildren: () => import('./ato/ato.module').then( m => m.AtoPageModule)
   }

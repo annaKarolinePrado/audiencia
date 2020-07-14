@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'listagem-tipo-responsavel',
     loadChildren: () => import('./listagem-tipo-responsavel/listagem-tipo-responsavel.module').then( m => m.ListagemTipoResponsavelPageModule)
+  },
+  {
+    path: 'tipo-edicao',
+    loadChildren: () => import('./tipo-edicao/tipo-edicao.module').then( m => m.TipoEdicaoPageModule)
   }
 ];
 

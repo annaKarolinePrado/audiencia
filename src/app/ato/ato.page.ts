@@ -16,6 +16,9 @@ export class AtoPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       'numero':[null,Validators.compose([
         Validators.required,
+      ])],
+      'tipo':[null,Validators.compose([
+        Validators.required,
       ])]
     });
    }

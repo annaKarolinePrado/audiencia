@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Alterar tipo de responsáveil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form [formGroup]="formGroup" (ngSubmit)="atualizar(); $event.preventDefault()">
+    
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+    <ion-input  name="descricao" formControlName="descricao" ></ion-input>
+      
+    </ion-item>     
+    <ion-button type="submit" expand="full" >Atualizar</ion-button>
+    <ion-button expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/tipo-responsavel-listagem']" expand="full">Listagem</ion-button>
+  
+  </form>
+</ion-content>

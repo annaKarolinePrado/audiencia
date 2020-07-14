@@ -52,23 +52,12 @@ export class Audiencia {
         });
         return true;       
       } 
-      get(subUrl){        
+      get(subUrl) {
         let url = CONFIG_API.url + subUrl;
         let headers = new HttpHeaders();
-        let tipo;
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', 'Bearer ');
-        //const promise = new Promise((resolve, reject) => {
-           let t = this.http.get(url,{headers})
-            .toPromise().then((res: any) => {
-             console.log(res);
-            },
-                error => {
-                    this.util.exibirMensagem("Erro.",error.error.mensagem)
-                    console.log(error.error.mensagem);
-            });
-        //});
-        return t ;       
+        return this.http.get(url,{headers});
       }
       salvar(dados,subUrl) {
         let url = CONFIG_API.url + subUrl;
@@ -79,6 +68,23 @@ export class Audiencia {
           this.http.post(url, dados)
             .subscribe((result: any) => {
               this.util.exibirMensagem("Sucesso.","Salvo com sucesso.");
+              resolve();
+            },
+            (error) => {
+              this.util.exibirMensagem("Erro.",error.error.mensagem)
+              console.log(error.error.mensagem);
+            });
+        });
+      } 
+      atualizar(dados,subUrl) {
+        let url = CONFIG_API.url + subUrl;
+        let headers = new HttpHeaders();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', 'Bearer ');
+        return new Promise((resolve, reject) => {   
+          this.http.put(url, dados)
+            .subscribe((result: any) => {
+              this.util.exibirMensagem("Sucesso.","Atualizado com sucesso.");
               resolve();
             },
             (error) => {

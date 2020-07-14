@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Autenticar } from '../service/autenticar';
+import { Audiencia } from '../service/audiencia';
 
 @Component({
   selector: 'app-fonte-divulgacao',
@@ -9,7 +9,7 @@ import { Autenticar } from '../service/autenticar';
 })
 export class FonteDivulgacaoPage implements OnInit {
   public formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder, public autentica: Autenticar) {
+  constructor(private formBuilder: FormBuilder, public audiencia: Audiencia) {
     this.formGroup = this.formBuilder.group({
       'nome':[null,Validators.compose([
         Validators.required,
@@ -33,7 +33,7 @@ export class FonteDivulgacaoPage implements OnInit {
     }
     console.log(this.formGroup.get('fonteDivulgacao').value); 
     console.log(fonte); 
-    //this.autentica.salvar(usuario);   
+    this.audiencia.salvar(fonte, "fonte-divulgacao/salvar");   
   }
   
 

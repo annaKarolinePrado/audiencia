@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Ato',
+      title: 'Tipo ato',
       url: 'tipo-ato',
       icon: 'heart'
     },
@@ -45,6 +45,11 @@ export class AppComponent implements OnInit {
     {
       title: 'Responsável',
       url: 'responsavel',
+      icon: 'heart'
+    },
+    {
+      title: 'Ato',
+      url: 'ato',
       icon: 'heart'
     }/*,
     {

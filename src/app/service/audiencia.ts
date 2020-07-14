@@ -7,7 +7,7 @@ import { TipoResponsavel } from '../tipo-responsavel';
 
 @Injectable()
 export class Audiencia {
-    data = [];
+    data;
     constructor(public http: HttpClient,public util: Util) {
     }
     
@@ -55,21 +55,20 @@ export class Audiencia {
       get(subUrl){        
         let url = CONFIG_API.url + subUrl;
         let headers = new HttpHeaders();
-        let retorno =[];
+        let tipo;
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', 'Bearer ');
-        const promise = new Promise((resolve, reject) => {
-            this.http.get(url,{headers})
+        //const promise = new Promise((resolve, reject) => {
+           let t = this.http.get(url,{headers})
             .toPromise().then((res: any) => {
-                retorno.push(res);
-                resolve();
+             console.log(res);
             },
                 error => {
                     this.util.exibirMensagem("Erro.",error.error.mensagem)
                     console.log(error.error.mensagem);
             });
-        });
-        return retorno;       
+        //});
+        return t ;       
       }
       salvar(dados,subUrl) {
         let url = CONFIG_API.url + subUrl;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Autenticar } from '../service/autenticar';
+import { Audiencia } from '../service/audiencia';
 
 @Component({
   selector: 'app-natureza-texto-juridico',
@@ -9,7 +10,7 @@ import { Autenticar } from '../service/autenticar';
 })
 export class NaturezaTextoJuridicoPage implements OnInit {
   public formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder, public autentica: Autenticar) {
+  constructor(private formBuilder: FormBuilder, public audiencia: Audiencia) {
     this.formGroup = this.formBuilder.group({
       'descricao':[null,Validators.compose([
         Validators.required,
@@ -29,7 +30,7 @@ export class NaturezaTextoJuridicoPage implements OnInit {
       'descricao':this.formGroup.get('descricao').value
     }
     console.log(naturezaTextoJuridico); 
-    //this.autentica.salvar(usuario);   
+    this.audiencia.salvar(naturezaTextoJuridico, "natureza-texto-juridico/salvar");   
   }
   
 

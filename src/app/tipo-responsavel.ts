@@ -1,5 +1,4 @@
 export interface TipoResponsavel {
-    id?: string;
-    descricao?: string;
+    id?;
+    descricao?;
 }
-

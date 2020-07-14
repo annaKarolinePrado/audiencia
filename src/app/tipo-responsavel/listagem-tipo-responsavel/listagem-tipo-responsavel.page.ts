@@ -32,7 +32,7 @@ export class ListagemTipoResponsavelPage implements OnInit {
     setTimeout(()=>{
       this.audiencia.delete("tipo-responsavel/"+id+"/excluir");
     });
-    this.tiposResponsaveis = this.audiencia.getAll('tipo-responsavel');
+      this.tiposResponsaveis = this.audiencia.getAll('tipo-responsavel');
   }
 
 }

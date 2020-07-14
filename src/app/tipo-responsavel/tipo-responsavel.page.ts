@@ -29,9 +29,9 @@ export class TipoResponsavelPage implements OnInit {
       if (parametros['id']) {
         this.id =parametros['id'];
         this.tipoResponsavel = <TipoResponsavel>this.audiencia.get('tipo-responsavel/'+this.id);
-        let l = this.audiencia.get('tipo-responsavel/'+this.id);
+        let l = this.audiencia.getAll('tipo-responsavel/');
         
-        console.log(l);
+        console.log(this.tipoResponsavel);
         
       }
     });

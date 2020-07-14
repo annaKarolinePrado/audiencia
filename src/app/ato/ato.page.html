@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="floating">Número*</ion-label>
+      <ion-input  formControlName="numero" type="text"></ion-input>
+    </ion-item><ion-item>
+      <ion-label stacked position="floating">Atos*</ion-label>
+      <ion-select formControlName="tipo">
+        <ion-select-option *ngFor="let tipoAto of tipoAtos" [value]="tipoAto.id">{{tipoAto.descricao}}</ion-select-option>
+      </ion-select>
+    </ion-item>  
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+    <ion-button expand="full">Cancelar</ion-button>
+  </form>
+</ion-content>

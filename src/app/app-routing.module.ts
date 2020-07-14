@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'responsavel',
     loadChildren: () => import('./responsavel/responsavel.module').then( m => m.ResponsavelPageModule)
+  },  {
+    path: 'ato',
+    loadChildren: () => import('./ato/ato.module').then( m => m.AtoPageModule)
   }
+
 
 ];
 

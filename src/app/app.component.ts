@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
       title: 'Tipos de responsáveis',
       url: 'tipo-responsavel',
       icon: 'heart'
+    },
+    {
+      title: 'Responsável',
+      url: 'responsavel',
+      icon: 'heart'
     }/*,
     {
       title: 'Favorites',

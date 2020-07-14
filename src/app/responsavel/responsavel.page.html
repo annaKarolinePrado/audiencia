@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Responsável</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="floating">Nome*</ion-label>
+      <ion-input  formControlName="nome" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.nome.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.nome.errors.required">Campo obrigatório</p>
+        <p style="color:brown" *ngIf="formGroup.controls.nome.errors.minlength">Possui menos que 3 caracteres</p>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CPF*</ion-label>
+      <ion-input  formControlName="cpf" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">RG*</ion-label>
+      <ion-input  formControlName="rg" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo*</ion-label>
+      <ion-input  formControlName="tipo-responsavel" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cargo*</ion-label>
+      <ion-input  formControlName="cargo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email*</ion-label>
+      <ion-input  formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone*</ion-label>
+      <ion-input  formControlName="telefone" type="text"></ion-input>
+    </ion-item>
+    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
+    <button expand="full">Cancelar</button>
+  </form>
+</ion-content>

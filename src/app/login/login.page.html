@@ -26,7 +26,7 @@
         <p style="color:brown" *ngIf="formGroup.controls.email.errors.minlength">Possui menos que 6 caracteres</p>
       </div>
     </ion-item>
-    <button type="submit" expand="full" [disabled]="!formGroup.valid">Logar</button>
-    <button type="submit" expand="full" routerLink="/usuario-cadastro" >Cadastrar</button>
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Logar</ion-button>
+    <ion-button type="submit" expand="full" routerLink="/usuario-cadastro" >Cadastrar</ion-button>
   </form>
 </ion-content>

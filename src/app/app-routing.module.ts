@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'tipo-responsavel-listagem',
     pathMatch: 'full'
   },
   {
@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'tipo-responsavel',
     loadChildren: () => import('./tipo-responsavel/tipo-responsavel.module').then( m => m.TipoResponsavelPageModule)
+  },
+  {
+    path: 'tipo-responsavel-listagem',
+    loadChildren: () => import('./tipo-responsavel/listagem-tipo-responsavel/listagem-tipo-responsavel.module').then( m => m.ListagemTipoResponsavelPageModule)
   }
 ];
 

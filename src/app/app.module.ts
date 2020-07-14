@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Autenticar } from './service/autenticar';
 import { Util } from './service/util';
+import { Audiencia } from './service/audiencia';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { Util } from './service/util';
     FormsModule,
     Autenticar,
     Util,
+    Audiencia,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

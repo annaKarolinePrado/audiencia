@@ -16,7 +16,8 @@
         <p style="color:brown" *ngIf="formGroup.controls.descricao.errors.required">Campo obrigatório</p>
       </div>
     </ion-item>     
-    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
-    <button expand="full">Cancelar</button>
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+    <ion-button expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/tipo-responsavel-listagem']" expand="full">Listagem</ion-button>
   </form>
 </ion-content>

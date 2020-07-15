@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Audiencia } from 'src/app/service/audiencia';
+import { NavController } from '@ionic/angular';
+import { NavigationExtras, Router } from '@angular/router';
+import { Responsavel } from 'src/app/responsavel';
 
 @Component({
   selector: 'app-listagem-responsavel',
@@ -6,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listagem-responsavel.page.scss'],
 })
 export class ListagemResponsavelPage implements OnInit {
-
-  constructor() { }
+  responsavel: Responsavel[]=[];
+  constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
   ngOnInit() {
+    setTimeout(()=>{
+      this.responsavel = this.audiencia.getAll('responsavel');
+    }),2000
+   
   }
+  editar(id) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        id: id
+      }
+    };
+    this.router.navigate(['/responsavel'], navigationExtras);
+  }
+  excluir(id) {    
+    setTimeout(()=>{
+      this.audiencia.delete("responsavel/"+id+"/excluir");
+      this.router.navigate(['/responsavel']);
+    });
+  }
+
 
 }

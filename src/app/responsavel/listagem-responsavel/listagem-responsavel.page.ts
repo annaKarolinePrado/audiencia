@@ -31,14 +31,10 @@ export class ListagemResponsavelPage {
     };
     this.router.navigate(['/responsavel'], navigationExtras);
   }
-  excluir(id) {    
-    
-      this.audiencia.delete("responsavel/"+id+"/excluir");
-      // this.router.navigate(['./listagem-responsavel']);
+  excluir(id) {   
     setTimeout(()=>{
-      this.responsavel = this.audiencia.getAll('responsavel');
+      this.audiencia.delete("responsavel/"+id+"/excluir");
+      this.router.navigate(['./responsavel']);
     }),2000;
   }
-
-
 }

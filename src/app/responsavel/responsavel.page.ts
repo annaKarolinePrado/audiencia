@@ -79,14 +79,5 @@ export class ResponsavelPage implements OnInit {
     }
     this.audiencia.salvar(tipoResponsavel, "responsavel/salvar");
   }
-  
-  listar() {
-    let navigationExtras: NavigationExtras = {
-      queryParams: {
-        id: this.id
-      }
-    };
-    this.router.navigate(['./listagem-responsavel'], navigationExtras);  
-  }
 
 }

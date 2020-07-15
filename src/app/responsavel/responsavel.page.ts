@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NavigationExtras, ActivatedRoute, Router } from '@angular/router';
 import { Audiencia } from '../service/audiencia';
 import { Responsavel } from '../responsavel';
+import { TipoResponsavel } from '../tipo-responsavel';
 
 @Component({
   selector: 'app-responsavel',
@@ -14,6 +15,7 @@ export class ResponsavelPage implements OnInit {
   private id : number = null;
   public router: Router;
   public responsavel: Responsavel;
+  public tipoResponsavel: TipoResponsavel[];
 
   constructor(private formBuilder: FormBuilder, public audiencia: Audiencia,
     public activatedRoute: ActivatedRoute) {
@@ -44,6 +46,7 @@ export class ResponsavelPage implements OnInit {
    }
 
   ngOnInit() {
+    this.tipoResponsavel = this.audiencia.getAll("tipo-responsavel/");
     this.activatedRoute.queryParams.subscribe( parametros => {
       if (parametros['id']) {
         this.id =parametros['id'];

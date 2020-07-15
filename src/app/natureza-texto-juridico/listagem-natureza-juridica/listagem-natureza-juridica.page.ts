@@ -17,7 +17,7 @@ export class ListagemNaturezaJuridicaPage implements OnInit {
   ngOnInit() {
     setTimeout(()=>{
       this.naturezaJuridica = this.audiencia.getAll('natureza-texto-juridico');
-    })
+    }),2000
    
   }
   editar(id) {
@@ -34,6 +34,6 @@ export class ListagemNaturezaJuridicaPage implements OnInit {
       this.router.navigate(['/natureza-texto-juridico']);
     });
   }
-  
+
 
 }

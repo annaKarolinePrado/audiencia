@@ -13,11 +13,15 @@ export class ListagemResponsavelPage implements OnInit {
   responsavel: Responsavel[]=[];
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
-  ngOnInit() {
-    setTimeout(()=>{
-      this.responsavel = this.audiencia.getAll('responsavel');
-    }),2000
+  // ngOnInit() {
+  //   setTimeout(()=>{
+  //     this.responsavel = this.audiencia.getAll('responsavel');
+  //   }),2000
    
+  // }
+
+  ionViewWillEnter() {
+    this.responsavel = this.audiencia.getAll('responsavel');
   }
   editar(id) {
     let navigationExtras: NavigationExtras = {
@@ -28,10 +32,12 @@ export class ListagemResponsavelPage implements OnInit {
     this.router.navigate(['/responsavel'], navigationExtras);
   }
   excluir(id) {    
-    setTimeout(()=>{
+    
       this.audiencia.delete("responsavel/"+id+"/excluir");
-      this.router.navigate(['/responsavel']);
-    });
+      // this.router.navigate(['./listagem-responsavel']);
+    setTimeout(()=>{
+      this.responsavel = this.audiencia.getAll('responsavel');
+    }),3000;
   }
 
 

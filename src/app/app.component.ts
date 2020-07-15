@@ -18,42 +18,42 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Tipo ato',
-      url: 'tipo-ato',
-      icon: 'heart'
-    },
-    {
       title: 'Natureza do Texto Jurídico',
       url: 'natureza-texto-juridico',
-      icon: 'heart'
+      icon: 'documents'
     },
     {
       title: 'Fonte de divulgação',
       url: 'fonte-divulgacao',
-      icon: 'heart'
+      icon: 'chatbubbles'
     },
     {
       title: 'Macro-objetivos',
       url: 'macroobjetivo',
-      icon: 'heart'
+      icon: 'archive'
     },
     {
       title: 'Tipos de responsáveis',
       url: 'tipo-responsavel',
-      icon: 'heart'
+      icon: 'people-circle'
     },
     {
       title: 'Responsável',
       url: 'responsavel',
-      icon: 'heart'
+      icon: 'people-circle'
+    },
+    {
+      title: 'Tipo ato',
+      url: 'tipo-ato',
+      icon: 'newspaper'
     },
     {
       title: 'Ato',
       url: 'ato',
-      icon: 'heart'
+      icon: 'newspaper'
     },
     {
-      title: 'Audiencia',
+      title: 'Audiência',
       url: 'audiencia',
       icon: 'heart'
     }/*,

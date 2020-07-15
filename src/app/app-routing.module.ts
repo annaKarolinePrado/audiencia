@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./natureza-texto-juridico/natureza-texto-juridico.module').then( m => m.NaturezaTextoJuridicoPageModule)
   },
   {
+    path: 'natureza-juridica-listagem',
+    loadChildren: () => import('./natureza-texto-juridico/listagem-natureza-juridica/listagem-natureza-juridica.module').then( m => m.ListagemNaturezaJuridicaPageModule)
+  },
+  {
     path: 'fonte-divulgacao',
     loadChildren: () => import('./fonte-divulgacao/fonte-divulgacao.module').then( m => m.FonteDivulgacaoPageModule)
   },

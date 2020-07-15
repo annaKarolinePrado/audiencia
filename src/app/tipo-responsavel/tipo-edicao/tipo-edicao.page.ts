@@ -26,7 +26,6 @@ export class TipoEdicaoPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe( parametros => {
         if (parametros['id']) {
-          console.log("pasouuuuuuuuu");
           this.id =parametros['id'];
           this.audiencia.get('tipo-responsavel/'+this.id).subscribe(val => {
             this.formGroup.get('descricao').setValue(val.descricao);  

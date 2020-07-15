@@ -34,5 +34,6 @@ export class ListagemNaturezaJuridicaPage implements OnInit {
       this.router.navigate(['/natureza-texto-juridico']);
     });
   }
+  
 
 }

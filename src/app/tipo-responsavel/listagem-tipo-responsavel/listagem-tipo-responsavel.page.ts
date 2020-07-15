@@ -16,7 +16,7 @@ export class ListagemTipoResponsavelPage implements OnInit {
   ngOnInit() {
     setTimeout(()=>{
       this.tiposResponsaveis = this.audiencia.getAll('tipo-responsavel');
-    }),2000
+    }),200
    
   }
   editar(id) {

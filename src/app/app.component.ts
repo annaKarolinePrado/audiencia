@@ -27,11 +27,11 @@ export class AppComponent implements OnInit {
       url: 'fonte-divulgacao',
       icon: 'chatbubbles'
     },
-    {
-      title: 'Macro-objetivos',
-      url: 'macroobjetivo',
-      icon: 'archive'
-    },
+    // {
+    //   title: 'Macro-objetivos',
+    //   url: 'macroobjetivo',
+    //   icon: 'archive'
+    // },
     {
       title: 'Tipos de responsáveis',
       url: 'tipo-responsavel',

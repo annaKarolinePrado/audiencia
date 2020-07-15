@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: FonteDivulgacaoPage
+  },
+  {
+    path: 'listagem-fonte',
+    loadChildren: () => import('./listagem-fonte/listagem-fonte.module').then( m => m.ListagemFontePageModule)
   }
 ];
 

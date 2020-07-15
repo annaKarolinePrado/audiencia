@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Autenticar } from '../service/autenticar';
 import { Audiencia } from '../service/audiencia';
 import { NavigationExtras, ActivatedRoute, Router } from '@angular/router';
 import { NaturezaTextoJuridico } from '../natureza-texto-juridico';
@@ -14,9 +13,10 @@ export class NaturezaTextoJuridicoPage implements OnInit {
   public formGroup: FormGroup;
   private id : number = null;
   public naturezaJuridica:NaturezaTextoJuridico;
+  public router: Router;
 
   constructor(private formBuilder: FormBuilder, public audiencia: Audiencia,
-     public activatedRoute: ActivatedRoute,private router: Router) {
+    public activatedRoute: ActivatedRoute) {
     this.formGroup = this.formBuilder.group({
       'descricao':[null,Validators.compose([
         Validators.required,
@@ -37,7 +37,6 @@ export class NaturezaTextoJuridicoPage implements OnInit {
     
   }
   salvar() {
-    console.log(this.formGroup.value);
     let naturezaTextoJuridico = {
       'id':this.id,
       'descricao':this.formGroup.get('descricao').value
@@ -51,7 +50,6 @@ export class NaturezaTextoJuridicoPage implements OnInit {
   }
   
   listar() {
-    console.log("bhyvb");
     let navigationExtras: NavigationExtras = {
       queryParams: {
         id: this.id

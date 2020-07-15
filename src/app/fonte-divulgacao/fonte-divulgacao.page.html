@@ -29,13 +29,13 @@
         <ion-select-option value="8">Diário oficial eletrônico do tribunal de contas do estado</ion-select-option>
         <ion-select-option value="9">Diário da justiça</ion-select-option>
         <ion-select-option value="10">Diário da assembléia</ion-select-option>
-        <ion-select-option value="11">	Mural público</ion-select-option>
+        <ion-select-option value="11">Mural público</ion-select-option>
         <ion-select-option value="12">Internet</ion-select-option>
         <ion-select-option value="13">Editora</ion-select-option>
       </ion-select>
     </ion-item>    
     
-    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-    <ion-button expand="full">Excluir</ion-button>
-  </form>
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Salvar</ion-button>
+    <ion-button [routerLink]="['/listagem-fonte']" expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/listagem-fonte']" expand="full">Listagem</ion-button>  </form>
 </ion-content>

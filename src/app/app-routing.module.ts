@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./fonte-divulgacao/fonte-divulgacao.module').then( m => m.FonteDivulgacaoPageModule)
   },
   {
+    path: 'listagem-fonte',
+    loadChildren: () => import('./fonte-divulgacao/listagem-fonte/listagem-fonte.module').then( m => m.ListagemFontePageModule)
+  },
+  {
     path: 'macroobjetivo',
     loadChildren: () => import('./macroobjetivo/macroobjetivo.module').then( m => m.MacroobjetivoPageModule)
   },

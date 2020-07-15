@@ -42,6 +42,6 @@
       <ion-input  formControlName="telefone" type="text"></ion-input>
     </ion-item>
     <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
-    <button expand="full">Cancelar</button>
+    <button expand="full" [routerLink]="['/inicio']">Cancelar</button>
   </form>
 </ion-content>

@@ -48,12 +48,12 @@ export class ResponsavelPage implements OnInit {
       'nome':this.formGroup.get('nome').value,
       'cpf': this.formGroup.get('cpf').value,
       'rg': this.formGroup.get('rg').value,
-      'tipo_responsavel': this.formGroup.get('tipo_responsavel').value,
+      'tipo-responsavel': this.formGroup.get('tipo-responsavel').value,
       'cargo': this.formGroup.get('cargo').value,
       'email': this.formGroup.get('email').value,
       'telefone': this.formGroup.get('telefone').value
     }
     console.log(tipoAto); 
-    this.audiencia.salvar(tipoAto, "tipo-ato/salvar");}
+    this.audiencia.salvar(tipoAto, "responsavel/salvar");}
 
 }

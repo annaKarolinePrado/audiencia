@@ -61,6 +61,7 @@
     </ion-item>
     
     <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-    <ion-button expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/listagem-responsavel']" expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/listagem-responsavel']" expand="full">Listagem</ion-button>
   </form>
 </ion-content>

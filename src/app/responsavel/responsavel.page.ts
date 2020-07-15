@@ -64,6 +64,7 @@ export class ResponsavelPage implements OnInit {
   salvar() {
     console.log(this.formGroup.value);
     let tipoResponsavel= {
+      'id':this.id,
       'nome':this.formGroup.get('nome').value,
       'cpf': this.formGroup.get('cpf').value,
       'rg': this.formGroup.get('rg').value,
@@ -77,7 +78,6 @@ export class ResponsavelPage implements OnInit {
     }else{
       this.audiencia.salvar(tipoResponsavel, "responsavel/salvar"); 
     }
-    this.audiencia.salvar(tipoResponsavel, "responsavel/salvar");
   }
 
 }

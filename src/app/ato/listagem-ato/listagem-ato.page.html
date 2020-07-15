@@ -11,7 +11,7 @@
   <ion-list>
     <ion-item *ngFor="let item of atos" >
       <p position="floating"  expand="full"><strong > {{item.numero}} </strong> </p>          
-        <ion-icon slot="end"  (click)="editar(item.id)" color="primary" name="create"></ion-icon>
+        <ion-icon slot="end" (click)="editar(item.id)" color="primary" name="create"></ion-icon>
         <ion-icon slot="end" (click)="excluir(item.id)" color="danger" name="trash"></ion-icon>      
     </ion-item>  
     

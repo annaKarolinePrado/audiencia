@@ -20,28 +20,47 @@
     <ion-item>
       <ion-label position="floating">CPF*</ion-label>
       <ion-input  formControlName="cpf" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.cpf.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.cpf.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
     <ion-item>
       <ion-label position="floating">RG*</ion-label>
       <ion-input  formControlName="rg" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.rg.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.rg.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Tipo*</ion-label>
       <ion-input  formControlName="tipo-responsavel" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.tipo-responsavel.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.tipo-responsavel.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Cargo*</ion-label>
       <ion-input  formControlName="cargo" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.cargo.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.cargo.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email*</ion-label>
       <ion-input  formControlName="email" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.email.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.email.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Telefone*</ion-label>
       <ion-input  formControlName="telefone" type="text"></ion-input>
+      <div *ngIf="formGroup.controls.telefone.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.telefone.errors.required">Campo obrigatório</p>
+      </div>
     </ion-item>
-    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
-    <button expand="full">Cancelar</button>
+    
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+    <ion-button expand="full">Cancelar</ion-button>
   </form>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Autenticar } from '../service/autenticar';
+import { Audiencia } from '../service/audiencia';
 
 @Component({
   selector: 'app-responsavel',
@@ -9,7 +9,7 @@ import { Autenticar } from '../service/autenticar';
 })
 export class ResponsavelPage implements OnInit {
   public formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder, public autentica: Autenticar) {
+  constructor(private formBuilder: FormBuilder, public audiencia: Audiencia) {
     this.formGroup = this.formBuilder.group({
       'nome':[null,Validators.compose([
         Validators.required,
@@ -42,6 +42,18 @@ export class ResponsavelPage implements OnInit {
 
   }
 
-  salvar() {}
+  salvar() {
+    console.log(this.formGroup.value);
+    let tipoAto= {
+      'nome':this.formGroup.get('nome').value,
+      'cpf': this.formGroup.get('cpf').value,
+      'rg': this.formGroup.get('rg').value,
+      'tipo_responsavel': this.formGroup.get('tipo_responsavel').value,
+      'cargo': this.formGroup.get('cargo').value,
+      'email': this.formGroup.get('email').value,
+      'telefone': this.formGroup.get('telefone').value
+    }
+    console.log(tipoAto); 
+    this.audiencia.salvar(tipoAto, "tipo-ato/salvar");}
 
 }

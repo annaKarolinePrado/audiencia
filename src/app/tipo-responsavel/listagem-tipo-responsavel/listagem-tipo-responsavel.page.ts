@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Audiencia } from 'src/app/service/audiencia';
 import { TipoResponsavel } from 'src/app/tipo-responsavel';
 import { NavController } from '@ionic/angular';
-import { Util } from 'src/app/service/util';
 import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
@@ -12,7 +11,6 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ListagemTipoResponsavelPage implements OnInit {
   tiposResponsaveis: TipoResponsavel[]=[];
-  private routerService: Router;
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
   ngOnInit() {
@@ -33,7 +31,7 @@ export class ListagemTipoResponsavelPage implements OnInit {
     setTimeout(()=>{
       this.audiencia.delete("tipo-responsavel/"+id+"/excluir");
     });
-      this.tiposResponsaveis = this.audiencia.getAll('tipo-responsavel');
+      this.router.navigate(['/tipo-responsavel']);
   }
 
 }

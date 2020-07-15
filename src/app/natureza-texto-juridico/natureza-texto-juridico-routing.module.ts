@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: NaturezaTextoJuridicoPage
+  },
+  {
+    path: 'listagem-natureza-juridica',
+    loadChildren: () => import('./listagem-natureza-juridica/listagem-natureza-juridica.module').then( m => m.ListagemNaturezaJuridicaPageModule)
   }
 ];
 

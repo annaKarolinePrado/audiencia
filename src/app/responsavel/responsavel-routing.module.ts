@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ResponsavelPage
+  },
+  {
+    path: 'listagem-responsavel',
+    loadChildren: () => import('./listagem-responsavel/listagem-responsavel.module').then( m => m.ListagemResponsavelPageModule)
   }
 ];
 

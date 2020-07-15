@@ -9,7 +9,7 @@ import { Responsavel } from 'src/app/responsavel';
   templateUrl: './listagem-responsavel.page.html',
   styleUrls: ['./listagem-responsavel.page.scss'],
 })
-export class ListagemResponsavelPage implements OnInit {
+export class ListagemResponsavelPage {
   responsavel: Responsavel[]=[];
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 

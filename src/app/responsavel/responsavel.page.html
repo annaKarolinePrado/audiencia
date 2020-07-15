@@ -32,10 +32,10 @@
       </div>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Tipo*</ion-label>
-      <ion-input  formControlName="tipo-responsavel" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.tipo-responsavel.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.tipo-responsavel.errors.required">Campo obrigatório</p>
+      <ion-label position="floating">Tipo de responsável*</ion-label>
+      <ion-input  formControlName="tipo_responsavel" type="number"></ion-input>
+      <div *ngIf="formGroup.controls.tipo_responsavel.errors">
+        <p style="color:brown" *ngIf="formGroup.controls.tipo_responsavel.errors.required">Campo obrigatório</p>
       </div>
     </ion-item>
     <ion-item>
@@ -47,7 +47,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email*</ion-label>
-      <ion-input  formControlName="email" type="text"></ion-input>
+      <ion-input  formControlName="email" type="email"></ion-input>
       <div *ngIf="formGroup.controls.email.errors">
         <p style="color:brown" *ngIf="formGroup.controls.email.errors.required">Campo obrigatório</p>
       </div>
@@ -61,7 +61,7 @@
     </ion-item>
     
     <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-    <ion-button [routerLink]="['/listagem-responsavel']" expand="full">Cancelar</ion-button>
-    <ion-button [routerLink]="['/listagem-responsavel']" expand="full">Listagem</ion-button>
+    <ion-button [routerLink]="['./listagem-responsavel']" expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['./listagem-responsavel']" expand="full">Listagem</ion-button>
   </form>
 </ion-content>

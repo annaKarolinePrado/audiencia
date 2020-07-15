@@ -6,6 +6,7 @@ import { TipoAto } from '../tipo-ato';
 import { NaturezaTextoJuridico } from '../natureza-texto-juridico';
 import { FonteDivulgacao } from '../fonte-divulgacao';
 import { ActivatedRoute } from '@angular/router';
+import { Ato } from '../ato';
 
 @Component({
   selector: 'app-ato',

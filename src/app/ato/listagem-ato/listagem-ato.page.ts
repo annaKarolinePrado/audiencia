@@ -13,7 +13,6 @@ import { TipoAto } from 'src/app/tipo-ato';
 })
 export class ListagemAtoPage implements OnInit {
   atos: Ato[]=[];
-  public tipoAto: TipoAto;
 
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
@@ -21,9 +20,7 @@ export class ListagemAtoPage implements OnInit {
     setTimeout(()=>{
       this.atos = this.audiencia.getAll('ato');
       console.log(this.atos)
-    }),2000
-   
-    
+    }),2000 
 
   }
   editar(id) {

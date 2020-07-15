@@ -21,17 +21,47 @@
     </ion-item> 
     <ion-item>
       <ion-label stacked position="floating">Natureza do texto jurídico*</ion-label>
-      <ion-select formControlName="tipo">
-        <ion-select-option *ngFor="let tipoAto of naturezaJuridicas" [value]="naturezaJuridica.id">{{tipoAto.descricao}}</ion-select-option>
+      <ion-select  formControlName="naturezaTextoJuridico">
+        <ion-select-option *ngFor="let natureza of naturezas" [value]="natureza.id">{{natureza.descricao}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked position="floating">Fonte de divulgação*</ion-label>
+      <ion-select  formControlName="fonteDivulgacao">
+        <ion-select-option *ngFor="let fonte of fontes" [value]="fonte.id">{{fonte.nome}}</ion-select-option>
       </ion-select>
     </ion-item> 
-    
     <ion-item>
-      <ion-label position="floating">Número*</ion-label>
-      <ion-input  formControlName="data" type="date"></ion-input>
+      <ion-label position="floating">Data criação*</ion-label>
+      <ion-input placeholder="" formControlName="dataCriacao" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data vigorar</ion-label>
+      <ion-input placeholder="" formControlName="dataVigorar" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data revogar</ion-label>
+      <ion-input placeholder="" formControlName="dataRevogar" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data sanção*</ion-label>
+      <ion-input placeholder="" formControlName="dataSancao" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data publicação*</ion-label>
+      <ion-input placeholder="" formControlName="dataPublicacao" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Número do diario oficial</ion-label>
+      <ion-input placeholder="" formControlName="numeroDiarioOficial" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ementa*</ion-label>
+      <ion-input placeholder="" formControlName="ementa" type="text"></ion-input>
     </ion-item>
 
-    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-    <ion-button expand="full">Cancelar</ion-button>
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Salvar</ion-button>
+    <ion-button [routerLink]="['/listagem-ato']" expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/listagem-ato']" expand="full">Listagem</ion-button>
   </form>
 </ion-content>

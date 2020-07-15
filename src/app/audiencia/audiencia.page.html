@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Audiência</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">
+    <ion-item>
+      <ion-label position="floating">tema*</ion-label>
+      <ion-input  formControlName="tema" type="text"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label stacked position="floating">Ato*</ion-label>
+      <ion-select formControlName="ato">
+        <ion-select-option *ngFor="let ato of atos" [value]="ato.id">{{ato.numero}}</ion-select-option>
+      </ion-select>
+    </ion-item>  
+    <ion-item>
+      <ion-label position="floating">Data e hora*</ion-label>
+      <ion-input placeholder="" formControlName="dataHora" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data primeira convocação</ion-label>
+      <ion-input placeholder="" formControlName="dataPrimeiraConvocacao" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Situação</ion-label>
+      <ion-input placeholder="" formControlName="situacao" type="text"></ion-input>
+    </ion-item>
+       
+    <ion-item>
+      <ion-label stacked position="floating">Equipe de planejamento</ion-label>
+      <ion-select formControlName="equipePlanejamento">
+        <ion-select-option *ngFor="let equipe of equipes" [value]="equipe.id">{{equipe.descricao}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço do beneficiado</ion-label>
+      <ion-input placeholder="" formControlName="enderecoDoBeneficiado" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo de audiencia</ion-label>
+      <ion-input placeholder="" formControlName="tipoAudiencia" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço beneficiado</ion-label>
+      <ion-input placeholder="" formControlName="enderecoBeneficiado" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Assunto</ion-label>
+      <ion-input placeholder="" formControlName="assunto" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="full">Salvar</ion-button>
+    <ion-button [routerLink]="['/listagem-audiencia']" expand="full">Cancelar</ion-button>
+    <ion-button [routerLink]="['/listagem-audiencia']" expand="full">Listagem</ion-button>
+  </form>
+</ion-content>

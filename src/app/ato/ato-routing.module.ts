@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: AtoPage
+  },
+  {
+    path: 'listagem-ato',
+    loadChildren: () => import('./listagem-ato/listagem-ato.module').then( m => m.ListagemAtoPageModule)
   }
 ];
 

@@ -3,23 +3,28 @@ import { Audiencia } from 'src/app/service/audiencia';
 import { TipoResponsavel } from 'src/app/tipo-responsavel';
 import { NavController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
-import { FonteDivulgacao } from 'src/app/fonte-divulgacao';
+import { Ato } from 'src/app/ato';
+import { TipoAto } from 'src/app/tipo-ato';
 
 @Component({
-  selector: 'app-listagem-fonte',
-  templateUrl: './listagem-fonte.page.html',
-  styleUrls: ['./listagem-fonte.page.scss'],
+  selector: 'app-listagem-ato',
+  templateUrl: './listagem-ato.page.html',
+  styleUrls: ['./listagem-ato.page.scss'],
 })
-export class ListagemFontePage implements OnInit {
-  fontes: FonteDivulgacao[]=[];
-  
+export class ListagemAtoPage implements OnInit {
+  atos: Ato[]=[];
+  public tipoAto: TipoAto;
+
   constructor(public audiencia: Audiencia, public navCtrl:NavController,private router: Router) { }
 
   ngOnInit() {
     setTimeout(()=>{
-      this.fontes = this.audiencia.getAll('fonte-divulgacao');
+      this.atos = this.audiencia.getAll('ato');
+      console.log(this.atos)
     }),2000
    
+    
+
   }
   editar(id) {
     let navigationExtras: NavigationExtras = {
@@ -27,12 +32,12 @@ export class ListagemFontePage implements OnInit {
         id: id
       }
     };
-    this.router.navigate(['/fonte-divulgacao'], navigationExtras);
+    this.router.navigate(['/ato'], navigationExtras);
   }
   excluir(id) {    
     setTimeout(()=>{
-      this.audiencia.delete("fonte-divulgacao/"+id+"/excluir");
-      this.router.navigate(['/fonte-divulgacao']);
+      this.audiencia.delete("ato/"+id+"/excluir");
+      this.router.navigate(['/ato']);
     }),2000
   }
 }

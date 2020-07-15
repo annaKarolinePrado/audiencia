@@ -66,7 +66,20 @@ const routes: Routes = [
   {
     path: 'ato',
     loadChildren: () => import('./ato/ato.module').then( m => m.AtoPageModule)
+  },
+  {
+    path: 'listagem-ato',
+    loadChildren: () => import('./ato/listagem-ato/listagem-ato.module').then( m => m.ListagemAtoPageModule)
+  },
+  {
+    path: 'audiencia',
+    loadChildren: () => import('./audiencia/audiencia.module').then( m => m.AudienciaPageModule)
+  },
+  {
+    path: 'listagem-audiencia',
+    loadChildren: () => import('./audiencia/listagem-audiencia/listagem-audiencia.module').then( m => m.ListagemAudienciaPageModule)
   }
+
 
 
 ];

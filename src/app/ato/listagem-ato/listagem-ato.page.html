@@ -3,17 +3,17 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Listagem fontes de divulgação</ion-title>
+    <ion-title>Listagem de atos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of fontes" >
-      <p position="floating"  expand="full"><strong > {{item.nome}} </strong> </p>          
+    <ion-item *ngFor="let item of atos" >
+      <p position="floating"  expand="full"><strong > {{item.numero}} </strong> </p>          
         <ion-icon slot="end"  (click)="editar(item.id)" color="primary" name="create"></ion-icon>
         <ion-icon slot="end" (click)="excluir(item.id)" color="danger" name="trash"></ion-icon>      
-    </ion-item>    
+    </ion-item>  
     
   </ion-list>
 </ion-content>

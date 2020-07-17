@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
     })
     
   }
-  salvar() {
+  logar() {
     console.log(this.formGroup.value);
     let usuario= {
       'email': this.formGroup.get('email').value,

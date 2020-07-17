@@ -1,30 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="formGroup" (ngSubmit)="salvar(); $event.preventDefault()">    
+  <form [formGroup]="formGroup" (ngSubmit)="logar(); $event.preventDefault()">    
     <ion-item>
       <ion-label position="floating">E-mail*</ion-label>
       <ion-input  formControlName="email" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.email.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.email.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.email.errors.minlength">Possui menos que 5 caracteres</p>
-        <p style="color:brown" *ngIf="formGroup.controls.email.errors.email">Email invalido</p>        
-      </div>
     </ion-item>       
     <ion-item>
       <ion-label position="floating">Senha*</ion-label>
       <ion-input formControlName="senha" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.senha.errors">
-        <p style="color:brown" *ngIf="formGroup.controls.senha.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.email.errors.minlength">Possui menos que 6 caracteres</p>
-      </div>
     </ion-item>
     <ion-button type="submit" expand="full" [disabled]="!formGroup.valid">Logar</ion-button>
     <ion-button type="submit" expand="full" routerLink="/usuario-cadastro" >Cadastrar</ion-button>

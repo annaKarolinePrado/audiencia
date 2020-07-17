@@ -7,6 +7,7 @@ import { FonteDivulgacao } from '../fonte-divulgacao';
 import { ActivatedRoute } from '@angular/router';
 import { Ato } from '../ato';
 import { EquipePlanejamento } from '../equipe-planejamento';
+import { TipoAto } from '../tipo-ato';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class AudienciaPage implements OnInit {
   private id : number = null;
   public audiencias: Audiencia[];
   public equipes:EquipePlanejamento[];
+  public atos:Ato[];
 
   constructor(private formBuilder: FormBuilder, public audiencia: Audiencia,
     public activatedRoute: ActivatedRoute) {
@@ -50,6 +52,7 @@ export class AudienciaPage implements OnInit {
 
   ngOnInit() {
     this.audiencias = this.audiencia.getAll("audiencia/");
+    this.atos = this.audiencia.getAll("ato/");
     //this.equipes = this.audiencia.getAll("equipe-planejamento/")  
     this.activatedRoute.queryParams.subscribe( parametros => {
       if (parametros['id']) {

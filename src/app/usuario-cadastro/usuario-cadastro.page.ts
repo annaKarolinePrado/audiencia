@@ -17,8 +17,6 @@ export class UsuarioCadastroPage implements OnInit {
       ])],
       'email':[null,Validators.compose([
         Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(250),
         Validators.email
       ])],
       'senha':[null,Validators.compose([

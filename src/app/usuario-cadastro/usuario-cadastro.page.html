@@ -12,7 +12,7 @@
     <ion-item>
       <ion-label position="floating">Nome*</ion-label>
       <ion-input  formControlName="nome" type="text"></ion-input>
-      <div *ngIf="formGroup.controls.email.errors">
+      <div *ngIf="formGroup.controls.nome.errors">
         <p style="color:brown" *ngIf="formGroup.controls.nome.errors.required">Campo obrigatório</p>
         <p style="color:brown" *ngIf="formGroup.controls.nome.errors.minlength">Possui menos que 3 caracteres</p>
       </div>
@@ -22,7 +22,6 @@
       <ion-input  formControlName="email" type="text"></ion-input>
       <div *ngIf="formGroup.controls.email.errors">
         <p style="color:brown" *ngIf="formGroup.controls.email.errors.required">Campo obrigatório</p>
-        <p style="color:brown" *ngIf="formGroup.controls.email.errors.minlength">Possui menos que 5 caracteres</p>
         <p style="color:brown" *ngIf="formGroup.controls.email.errors.email">Email invalido</p>        
       </div>
     </ion-item>       
@@ -43,6 +42,6 @@
       </div>
     </ion-item>
     
-    <button type="submit" expand="full" [disabled]="!formGroup.valid">Cadastrar</button>
+    <ion-button type="submit" expand="full" [disabled]="!formGroup.valid" color="success">Cadastrar</ion-button>
   </form>
 </ion-content>
